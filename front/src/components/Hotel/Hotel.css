@@ -1,0 +1,339 @@
+/*
+hotel
+*******************************************************************************/
+.hotel-ctn .hotel-description .hotel-name, view-map .view-map .link {
+    color: #179EA4;
+    text-decoration: none;
+    cursor: pointer; }
+.hotel-ctn .hotel-description .hotel-name:active, view-map .view-map .link:active {
+    color: #179EA4;
+    text-decoration: underline; }
+.hotel-ctn .hotel-description .hotel-name:hover, view-map .view-map .link:hover {
+    color: #0E727C;
+    text-decoration: underline; }
+.hotel-ctn .hotel-description [class*="icon-"].hotel-name:hover, view-map .view-map [class*="icon-"].link:hover {
+    text-decoration: none; }
+
+.hotel-ctn {
+    background-color: #fff;
+    padding: 8px;
+    position: relative;
+    box-shadow: 0px 1px 3px 0px rgba(119, 119, 119, 0.3);
+    margin-bottom: 16px; }
+.hotel-ctn.featured {
+    border: 4px solid #3E6EB6; }
+.hotel-ctn.chain-disney {
+    border: none; }
+.hotel-ctn.chain-disney .price-box-ctn .price-box {
+    padding-top: 40px; }
+.hotel-ctn.chain-disney .price-box-ctn .price-box .seal-disney {
+    display: block; }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn.chain-disney .price-box-ctn .price-box {
+        padding-top: 48px; }
+    .hotel-ctn.chain-disney .gallery-ctn {
+        margin-top: 16px; } }
+.hotel-ctn .header-featured {
+    background-color: #3E6EB6;
+    color: white;
+    text-align: center;
+    margin-bottom: 8px; }
+.hotel-ctn .header-featured .featured-text {
+    line-height: 32px;
+    line-height: 2rem;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: bold; }
+.hotel-ctn .placeholder-loader .header {
+    height: 192px; }
+.hotel-ctn .placeholder-loader .content-loader {
+    box-sizing: border-box;
+    padding: 16px; }
+.hotel-ctn .header-hotel {
+    position: relative; }
+.hotel-ctn .header-.offer, .hotel-ctn .header-.disney {
+    position: absolute;
+    z-index: 1;
+    width: 100%; }
+.hotel-ctn .header-.offer .offer-text, .hotel-ctn .header-.offer .disney-text, .hotel-ctn .header-.disney .offer-text, .hotel-ctn .header-.disney .disney-text {
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold; }
+.hotel-ctn .header-.offer .offer-text {
+    background: #245CB6; }
+.hotel-ctn .header-.offer .offer-text.important {
+    background: #EA6422; }
+.hotel-ctn .header-.offer .offer-text.semana-loca {
+    position: relative;
+    background-color: #EA6422; }
+.hotel-ctn .header-.offer .offer-text.semana-loca .image {
+    position: absolute;
+    top: -6px;
+    right: 16px;
+    display: inline-block;
+    height: 38px;
+    width: 58px; }
+@media only screen and (min-width: 768px) and (max-width: 1151px) {
+    .hotel-ctn .header-.offer .offer-text {
+        padding-left: 32px; } }
+.hotel-ctn .header-.disney {
+    height: 32px; }
+.hotel-ctn .header-.disney .disney-text {
+    padding-left: 40px; }
+.hotel-ctn .header-.disney-icon {
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-left: 72px;
+    margin-top: -4px;
+    transform: rotate(-25deg); }
+@media only screen and (min-width: 768px) and (max-width: 1151px) {
+    .hotel-ctn .header-.disney .disney-text {
+        padding-left: 72px; } }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .header-.disney .disney-text {
+        padding-left: 32px; } }
+.hotel-ctn .header-.agreggate {
+    position: relative; }
+.hotel-ctn .header-.agreggate .gift {
+    box-sizing: border-box;
+    padding-top: 4px;
+    width: 40px;
+    height: 48px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    font-size: 14px;
+    line-height: 18px;
+    z-index: 1;
+    top: -8px;
+    left: 16px;
+    background-color: #2C9351;
+    border-radius: 2px 0px 2px 2px;
+    font-weight: bold; }
+.hotel-ctn .header-.agreggate .gift:after {
+    content: "";
+    position: absolute;
+    border-width: 4px;
+    border-color: transparent transparent #2C9351 #2C9351;
+    border-style: solid;
+    top: 0;
+    right: -8px; }
+@media only screen and (min-width: 768px) and (max-width: 1151px) {
+    .hotel-ctn .header-.agreggate .gift {
+        left: 16px; } }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .header-.agreggate .gift {
+        left: 16px; } }
+.hotel-ctn .header-.agreggate .gift p {
+    position: relative;
+    left: 23px;
+    top: 9px; }
+.hotel-ctn .header-hotel .hotel-image {
+    background-size: cover;
+    background-position: 50%;
+    height: 192px; }
+.hotel-ctn .hotel-description {
+    padding: 0px 16px; }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .hotel-description {
+        padding: 0px; } }
+.hotel-ctn .hotel-description .hotel-link {
+    display: block; }
+.hotel-ctn .hotel-description .hotel-name {
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+.hotel-ctn .hotel-description .star-ctn {
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: normal; }
+.hotel-ctn .hotel-description .not-meal-plan {
+    padding-bottom: 32px; }
+.hotel-ctn .hotel-description .meal-ctn {
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #EA6422;
+    margin-bottom: 16px; }
+.hotel-ctn .hotel-description .meal-ctn .meal-description {
+    margin-left: 4px;
+    display: inline-block; }
+.hotel-ctn .hotel-description .meal-ctn .meal-description:first-letter {
+    text-transform: uppercase; }
+.hotel-ctn .hotel-description .meal-ctn [class*="icon-"] {
+    vertical-align: middle; }
+.hotel-ctn .hotel-description .not-amenities {
+    padding-top: 16px;
+    padding-bottom: 32px; }
+.hotel-ctn .hotel-description .amenities-ctn {
+    padding-bottom: 8px; }
+.hotel-ctn .hotel-description .amenities-ctn .list {
+    margin-bottom: 8px;
+    list-style: none; }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .hotel-description .amenities-ctn .list {
+        margin-bottom: 0px; } }
+.hotel-ctn .hotel-description .amenities-ctn .list li {
+    margin-left: 0px;
+    display: inline-block; }
+.hotel-ctn .hotel-description .amenities-ctn .list .amenity--lg {
+    vertical-align: top; }
+.hotel-ctn .hotel-description .rating-summary-ctn {
+    margin-bottom: 16px; }
+.hotel-ctn .hotel-description .rating-summary-ctn .rating-summary {
+    color: #678D44;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+.hotel-ctn .hotel-description .rating-summary-ctn img {
+    margin-right: 4px; }
+.hotel-ctn .hotel-description .rating-summary-ctn .quantity {
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: normal; }
+.hotel-ctn .hotel-description .disney-info .link {
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: normal;
+    color: #179EA4;
+    text-decoration: none;
+    cursor: pointer; }
+.hotel-ctn .hotel-description .disney-info .link:active {
+    color: #179EA4;
+    text-decoration: underline; }
+.hotel-ctn .hotel-description .disney-info .link:hover {
+    color: #0E727C;
+    text-decoration: underline; }
+.hotel-ctn .hotel-description .disney-info .link[class*="icon-"]:hover {
+    text-decoration: none; }
+.hotel-ctn .hotel-description .disney-info [class*="icon-"] {
+    vertical-align: middle; }
+.hotel-ctn .hotel-description .disney-info .info-description {
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding-bottom: 16px;
+    color: #EA6422; }
+.hotel-ctn .hotel-description .disney-info .info-description .meal-description {
+    display: inline-block; }
+.hotel-ctn .hotel-description .disney-info .info-description .meal-description:first-letter {
+    text-transform: uppercase; }
+.hotel-ctn .hotel-description .trip-point {
+    display: inline-block; }
+.hotel-ctn .hotel-description .hotel-location > li {
+    border-right: 1px solid #CCC;
+    padding-right: 8px;
+    margin-right: 8px; }
+.hotel-ctn .hotel-description .hotel-location > li:last-child {
+    border-right: none;
+    margin-right: 0px;
+    padding-right: 0px; }
+.hotel-ctn .hotel-description span.amenity--lg {
+    margin: 0 4px; }
+.hotel-ctn .price-box-ctn {
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 24px 24px 0px 32px;
+    border-left: 1px dashed #CCC;
+    min-height: 192px; }
+@media only screen and (min-width: 768px) and (max-width: 1151px) {
+    .hotel-ctn .price-box-ctn {
+        padding: 24px 0px 0px 8px; } }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .price-box-ctn {
+        padding: 16px 0px 8px 0px;
+        border-left: none; } }
+.hotel-ctn .price-box-ctn .price-box .seal-disney {
+    position: absolute;
+    display: none;
+    top: -8px;
+    left: calc(50% - 36px); }
+.hotel-ctn .price-box-ctn .price-box .seal-disney img {
+    height: 48px; }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .price-box-ctn .price-box .seal-disney {
+        top: 16px; } }
+.hotel-ctn .price-box-ctn .price-box .provider {
+    margin-bottom: 8px; }
+.hotel-ctn .price-box-ctn .price-box .price-description {
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: normal;
+    margin-bottom: 8px; }
+.hotel-ctn .price-box-ctn .price-box .price--lg {
+    margin-bottom: 8px; }
+.hotel-ctn .price-box-ctn .price-box .price-discount {
+    color: #2C9351;
+    margin-bottom: 0px;
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: normal; }
+.hotel-ctn .price-box-ctn .price-box .price-discount.without-promo {
+    text-decoration-line: line-through;
+    text-decoration-color: #2C9351; }
+.hotel-ctn .price-box-ctn .price-box .payment-methods {
+    line-height: 10px;
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 0px; }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .price-box-ctn .price-box {
+        padding-top: 16px;
+        border-top: 1px dashed #777; } }
+.hotel-ctn .price-box-ctn .price-box .button-detail {
+    margin-top: 8px;
+    margin-bottom: 8px; }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .price-box-ctn .price-box .button-detail {
+        width: 100%; } }
+
+am-trips-favorite {
+    position: absolute;
+    top: -8px;
+    right: 16px; }
+am-trips-favorite .trip-favorite-ctn {
+    z-index: 2; }
+
+.hotel-ctn .hotel-description .hotel-name, view-map .view-map .link {
+    color: #179EA4;
+    text-decoration: none;
+    cursor: pointer; }
+.hotel-ctn .hotel-description .hotel-name:active, view-map .view-map .link:active {
+    color: #179EA4;
+    text-decoration: underline; }
+.hotel-ctn .hotel-description .hotel-name:hover, view-map .view-map .link:hover {
+    color: #0E727C;
+    text-decoration: underline; }
+.hotel-ctn .hotel-description [class*="icon-"].hotel-name:hover, view-map .view-map [class*="icon-"].link:hover {
+    text-decoration: none; }
