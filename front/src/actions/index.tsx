@@ -7,12 +7,14 @@ export interface ShowAll {
 
 export interface FilterByName {
     type: constants.FILTERBY_NAME;
+    payload: string
 }
 export interface FilterByStars {
-    type: constants.FILTERBY_STARS;
+    type: constants.FILTERBY_STARS,
+    payload: number
 }
 
-export type VisibilityFilter = ShowAll | FilterByName | FilterByStars;
+export type VisibilityActions = ShowAll | FilterByName | FilterByStars;
 
 export function showAll(): ShowAll {
     return {
@@ -20,13 +22,15 @@ export function showAll(): ShowAll {
     };
 }
 
-export function filterByName(): FilterByName {
+export function filterByName(name: string): FilterByName {
     return {
-        type: constants.FILTERBY_NAME
+        type: constants.FILTERBY_NAME,
+        payload: name
     };
 }
-export function filterByStars(): FilterByStars {
+export function filterByStars(stars: number): FilterByStars {
     return {
-        type: constants.FILTERBY_STARS
+        type: constants.FILTERBY_STARS,
+        payload: stars
     };
 }

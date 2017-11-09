@@ -5,3 +5,5 @@
 .vscode
 */build
 */dist
+/front/build
+/front/node_modules

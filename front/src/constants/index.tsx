@@ -6,3 +6,5 @@ export type FILTERBY_NAME = typeof FILTERBY_NAME;
 
 export const FILTERBY_STARS = 'FILTERBY_STARS';
 export type FILTERBY_STARS = typeof FILTERBY_STARS;
+
+export type FILTER = SHOW_ALL | FILTERBY_NAME | FILTERBY_STARS

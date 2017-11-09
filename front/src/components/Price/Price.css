@@ -1,0 +1,213 @@
+.hotel-ctn.chain-disney .price-box-ctn .price-box {
+    padding-top: 40px; }
+.hotel-ctn.chain-disney .price-box-ctn .price-box .seal-disney {
+    display: block; }
+
+@media only screen and (max-width: 767px) {
+    .hotel-ctn.chain-disney .price-box-ctn .price-box {
+        padding-top: 48px; }
+}
+
+.price-box-ctn {
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 24px 24px 0px 32px;
+    border-left: 1px dashed #CCC;
+    min-height: 192px; }
+@media only screen and (min-width: 768px) and (max-width: 1151px) {
+    .price-box-ctn {
+        padding: 24px 0px 0px 8px; }
+
+}
+
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .price-box-ctn {
+        padding: 16px 0px 8px 0px;
+        border-left: none; } }
+.hotel-ctn .price-box-ctn .price-box .seal-disney {
+    position: absolute;
+    display: none;
+    top: -8px;
+    left: calc(50% - 36px); }
+
+.hotel-ctn .price-box-ctn .price-box .seal-disney img {
+    height: 48px; }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .price-box-ctn .price-box .seal-disney {
+        top: 16px; } }
+.hotel-ctn .price-box-ctn .price-box .provider {
+    margin-bottom: 8px; }
+.hotel-ctn .price-box-ctn .price-box .price-description {
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: normal;
+    margin-bottom: 8px; }
+.hotel-ctn .price-box-ctn .price-box .price--lg {
+    margin-bottom: 8px; }
+.hotel-ctn .price-box-ctn .price-box .price-discount {
+    color: #2C9351;
+    margin-bottom: 0px;
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: normal; }
+.hotel-ctn .price-box-ctn .price-box .price-discount.without-promo {
+    text-decoration-line: line-through;
+    text-decoration-color: #2C9351; }
+.hotel-ctn .price-box-ctn .price-box .payment-methods {
+    line-height: 10px;
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 0px; }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .price-box-ctn .price-box {
+        padding-top: 16px;
+        border-top: 1px dashed #777; } }
+.hotel-ctn .price-box-ctn .price-box .button-detail {
+    margin-top: 8px;
+    margin-bottom: 8px; }
+@media only screen and (max-width: 767px) {
+    .hotel-ctn .price-box-ctn .price-box .button-detail {
+        width: 100%; } }
+
+
+.price--xs {
+    color: #454848;
+    vertical-align: bottom; }
+.price--xs .price__currency {
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    display: inline-block; }
+.price--xs .price__amount {
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    display: inline-block; }
+.price--xs .price__text {
+    display: inline-block;
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: normal;
+    vertical-align: bottom;
+    margin-left: 4px; }
+
+.price--sm {
+    color: #454848;
+    vertical-align: bottom; }
+.price--sm .price__currency {
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    display: inline-block; }
+.price--sm .price__amount {
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: bold;
+    display: inline-block; }
+.price--sm .price__text {
+    display: inline-block;
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: normal;
+    vertical-align: bottom;
+    margin-left: 4px; }
+
+.price--lg {
+    color: #454848;
+    vertical-align: bottom; }
+.price--lg .price__currency {
+    line-height: 28px;
+    line-height: 1.75rem;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: normal;
+    display: inline-block; }
+.price--lg .price__amount {
+    line-height: 28px;
+    line-height: 1.75rem;
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block; }
+
+
+/*PRICE-BY COMPONENT************************************************************/
+price-by {
+    display: block;
+    padding-bottom: 8px;
+    float: right; }
+price-by .price-by .options-sort .sort-ctn {
+    position: relative;
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 14px;
+    font-size: 0.875rem;
+    text-align: center; }
+@media only screen and (min-width: 1152px) {
+    price-by .price-by .options-sort .sort-ctn {
+        float: right; } }
+price-by .price-by .options-sort .sort-ctn .label {
+    line-height: 16px;
+    line-height: 1rem;
+    font-size: 12px;
+    font-size: 0.75rem;
+    display: none;
+    margin-right: 8px; }
+@media only screen and (min-width: 1152px) {
+    price-by .price-by .options-sort .sort-ctn .label {
+        line-height: 32px;
+        line-height: 2rem;
+        font-size: 14px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        position: initial;
+        display: inline-block;
+        margin-right: 8px;
+        width: auto;
+        height: auto; } }
+price-by .price-by .options-sort .sort-ctn select[disabled] {
+    color: #AAA; }
+price-by .price-by .options-sort .order-by {
+    line-height: 32px;
+    line-height: 2rem;
+    font-size: 14px;
+    font-size: 0.875rem;
+    border-radius: 3px;
+    border-color: #CCC;
+    padding: 0 32px 0 8px;
+    -moz-appearance: none;
+    -webkit-appearance: none; }
+@media only screen and (max-width: 767px) {
+    price-by .price-by .options-sort .order-by {
+        width: 120px; } }
+price-by .price-by .options-sort .icon.icon-down {
+    font-size: 14px;
+    position: absolute;
+    right: 8px;
+    top: 11px;
+    padding-right: 0;
+    line-height: 16px;
+    pointer-events: none; }
+price-by .price-by.disabled .options-sort .sort-ctn .label {
+    color: #AAA; }
+

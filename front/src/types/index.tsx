@@ -1,3 +1,5 @@
+import {FILTER} from '../constants/index';
+
 export interface Hotel {
     id: string,
     name: string,
@@ -7,7 +9,12 @@ export interface Hotel {
     amenities: string[]
 }
 
+type Payload = string | number
+export interface Filter {
+    filter: FILTER,
+    payload: Payload
+}
 export interface StoreState {
-    visibilityFilter: string,
+    visibilityFilter: Filter,
     hotels: Hotel[]
 }

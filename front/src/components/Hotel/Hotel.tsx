@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Price, {Props as PriceProps} from '../Price/Price'
 import  './Hotel.css'
 
 export interface Props {
@@ -39,6 +40,8 @@ const Hotel: React.SFC<Props> = ({image, name, stars, amenities, price}: Props) 
                     <div></div>
                 </div>
             </div>
+
+            <Price amount={price}/>
         </article>
     )
 }
