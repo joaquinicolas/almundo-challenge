@@ -3,6 +3,7 @@ import * as bodyParser from "body-parser";
 import * as logger from "morgan";
 import * as dotenv from "dotenv";
 import {router} from './controllers/api';
+import * as cors from 'cors';
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
@@ -17,9 +18,10 @@ const app = express();
 /**
  * Express configuration.
  */
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 3001);
 app.use(logger("dev"));
 app.use(bodyParser.json());
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(router);
 

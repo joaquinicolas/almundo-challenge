@@ -1,5 +1,5 @@
 import {Hotel} from '../types/index';
-import fetch from 'isomorphic-fetch'
+import fetch from 'node-fetch';
 
 export const API = 'http://127.0.0.1:3001';
 
@@ -17,7 +17,8 @@ export function HotelDAOImpl(): HotelDAO {
     };
 
     const api: HotelDAO = {
-        getAll: () => {
+        getAll: (): Promise<Hotel[]> => {
+
             return fetch(API)
                 .then(response => response.json())
         },

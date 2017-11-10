@@ -16,6 +16,10 @@ import {HotelDAOImpl} from './api/index';
 const store = createStore<StoreState>(visibilityFilter,
     {visibilityFilter: {filter: SHOW_ALL, payload: ''},hotels:[]} ,
     applyMiddleware(thunkMiddleware));
+
+
+
+
 export const hotelAPI = HotelDAOImpl()
 store.dispatch(fetchHotels(hotelAPI))
 

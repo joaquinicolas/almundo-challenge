@@ -1,22 +1,20 @@
 
 import * as constants from '../constants';
 import {Hotel, StoreState} from '../types/index';
-import {error} from 'util';
 import {Action, ActionCreator, Dispatch} from 'redux';
-import {ThunkAction} from 'redux-thunk';
 import {HotelDAO} from '../api/index';
 
 export interface ShowAll {
-    type: constants.SHOW_ALL;
+    type: constants.SHOW_ALL
     payload: Hotel[]
 }
 
 export interface FilterByName {
-    type: constants.FILTERBY_NAME;
+    type: constants.FILTERBY_NAME
     payload: string
 }
 export interface FilterByStars {
-    type: constants.FILTERBY_STARS;
+    type: constants.FILTERBY_STARS
     payload: number
 }
 
