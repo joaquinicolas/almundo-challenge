@@ -1,13 +1,14 @@
 # HOTEL API
-
+ This is a RESTful API for serve hotels in data.json
 # Getting started
 - Clone the repository
 ```
 git clone https://github.com/joaquinicolas/almundo-challenge.git
+cd almundo-challenge/api
 ```
 - Install dependencies
 ```
-cd almundo-challenge
+cd api
 yarn install
 ```
 - Build and run the server api
