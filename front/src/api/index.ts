@@ -33,7 +33,7 @@ export function HotelDAOImpl(): HotelDAO {
 
     console.log("You are as : ", process.env.NODE_ENV, " mode");
     if (process.env.NODE_ENV == 'development')
-        return devAPI;
+        return api;
     else
         return api;
 
