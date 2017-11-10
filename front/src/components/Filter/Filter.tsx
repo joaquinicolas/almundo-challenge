@@ -16,8 +16,13 @@ export interface Props {
     onItemStarChecked?: (stars: number) => any
 }
 
-const Filter: React.SFC<Props> = ({iconHeader, textHeader, onButtonSearchClick, onItemStarChecked}: Props) => {
-
+const Filter: React.SFC<Props> = ({iconHeader, textHeader, onButtonSearchClick ,onItemStarChecked}: Props) => {
+    let f = null
+    if (textHeader == 'Estrellas'){
+        f = <StarsFilter onItemChecked={onItemStarChecked} />
+    }else {
+        f = <Searcher onClick={onButtonSearchClick}/>
+    }
     return (
         <div className="am-ctn am-ctn--gtr filter" style={{minHeight: 90}}>
             <span className="filter-header col-md-12">
@@ -26,10 +31,11 @@ const Filter: React.SFC<Props> = ({iconHeader, textHeader, onButtonSearchClick, 
                 <span className="arrow desktop icon-up"></span>
             </span>
             <div className="filter-container">
-                <Searcher onClick={onButtonSearchClick}/>
-                <StarsFilter onItemChecked={onItemStarChecked} />
+                {f}
+
             </div>
         </div>
+
     )
 }
 
@@ -37,7 +43,7 @@ const Filter: React.SFC<Props> = ({iconHeader, textHeader, onButtonSearchClick, 
 interface SearcherProps {
     onClick: (text: string) => any
 }
-const Searcher: React.SFC<SearcherProps> = ({onClick}: SearcherProps) => {
+ const Searcher: React.SFC<SearcherProps> = ({onClick}: SearcherProps) => {
     let text: HTMLInputElement
     return (
         <div className="filterv2__list-double__item-left">
@@ -59,15 +65,14 @@ interface StarsFilterProps {
     onItemChecked: (stars: number) => any
 }
 const options: string[] = ['1','2','3','4','5']
-const StarsFilter: React.SFC<StarsFilterProps> = ({onItemChecked}: StarsFilterProps) => {
+ const StarsFilter: React.SFC<StarsFilterProps> = ({onItemChecked}: StarsFilterProps) => {
     var isChecked: boolean = false
     return (
         <div className="options-filter">
             <div className="option">
                 <label htmlFor="all_STAR" className="input--block">
                     <input type="checkbox"/>
-                    <span>Todas las estrellas</span>
-                    <span className="option-quantity option-selected">(71)</span>
+                    <span style={{marginLeft: 8}}>Todas las estrellas</span>
                 </label>
             </div>
             {
@@ -81,7 +86,7 @@ const StarsFilter: React.SFC<StarsFilterProps> = ({onItemChecked}: StarsFilterPr
                         }}/>
                         <span className="option-star">
                             {
-                                new Array(parseInt(value)).map((value2, i) => <span key={i} className="icon-star"></span>)
+                                getStars(parseInt(value))
                             }
                         </span>
 
@@ -90,6 +95,14 @@ const StarsFilter: React.SFC<StarsFilterProps> = ({onItemChecked}: StarsFilterPr
             }
         </div>
     )
+}
+
+const getStars = (n: number) => {
+    let stars = []
+    for (let x = 0; x < n; x++){
+        stars.push(<span key={n + x} className="icon-star" style={{marginLeft: 8}}></span>)
+    }
+    return stars
 }
 
 export default Filter;

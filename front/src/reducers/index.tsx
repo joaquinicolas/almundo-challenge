@@ -1,16 +1,22 @@
 
 import { VisibilityActions } from '../actions';
-import {StoreState} from '../types/index';
+import {Hotel, StoreState} from '../types/index';
 import {  SHOW_ALL, FILTERBY_STARS, FILTERBY_NAME } from '../constants/index';
+
 
 export function visibilityFilter(state: StoreState, action: VisibilityActions): StoreState {
   switch (action.type) {
     case SHOW_ALL:
-      return { ...state, hotels: []};
+        console.log("*** EXECUTING REDUCER SHOW ALL ***")
+        console.log("*** RECEIVED ACTION ***. ", action)
+        console.log("*** CURRENT STATE ***. ", state)
+            return { ...state, hotels: action.payload, visibilityFilter: {filter: SHOW_ALL, payload: ''}}
     case FILTERBY_STARS:
-      return { ...state, hotels: state.hotels.filter(h => h.stars == action.payload) };
+
+      break;
     case FILTERBY_NAME:
-        return { ...state, hotels:state.hotels.filter(h => h.name.includes(action.payload)) };
+
+        break;
     default:
       return state;
   }

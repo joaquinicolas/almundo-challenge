@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Filter,{ICON_LEN, ICON_STAR} from './Filter/Filter';
+import Filter, {ICON_LEN, ICON_STAR} from './Filter/Filter';
 
 
 export interface Props {
@@ -14,11 +14,12 @@ const FilterList: React.SFC<Props> = ({filterByName, filterByStars}: Props) => {
                     <span>Filtrar por</span>
                 </div>
 
-                <Filter iconHeader={ICON_LEN} onButtonSearchClick={filterByName}  textHeader="Nombre"/>
+                <Filter iconHeader={ICON_LEN}  onButtonSearchClick={filterByName}  textHeader="Nombre"/>
                 <Filter iconHeader={ICON_STAR} onItemStarChecked={filterByStars} textHeader="Estrellas"/>
             </section>
         </aside>
     )
 }
+
 
 export default FilterList
