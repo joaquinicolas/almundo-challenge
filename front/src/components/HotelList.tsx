@@ -3,14 +3,15 @@ import HotelComponent from './Hotel/Hotel'
 import {Hotel} from '../types'
 
 export interface Props {
-    hotels?: Hotel[]
+    hotels: Hotel[]
 }
 const HotelList: React.SFC<Props> = (props: Props) => {
+    console.log("RECEIVED HOTELS IN HOTELSLIST.tsx: ", props.hotels)
     return (
         <main className="col-md-9">
             {
-               props.hotels.map((value) => {
-                   <HotelComponent image={value.image} name={value.name}
+               props.hotels.map((value, index) => {
+                   return <HotelComponent key={index} image={value.image} name={value.name}
                                    stars={value.stars}
                                    amenities={value.amenities}
                                    price={value.price}/>

@@ -15,9 +15,8 @@ import {SHOW_ALL} from './constants/index';
 const store = createStore<StoreState>(visibilityFilter,
     {visibilityFilter: {filter: SHOW_ALL, payload: ''},hotels:[]} ,
     applyMiddleware(thunkMiddleware));
-const hotelAPI = HotelDAOImpl()
+export const hotelAPI = HotelDAOImpl()
 store.dispatch(fetchHotels(hotelAPI))
-    .then(() => console.log(store.getState()))
 
 ReactDOM.render(
     <Provider store={store}>

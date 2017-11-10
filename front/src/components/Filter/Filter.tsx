@@ -14,12 +14,13 @@ export interface Props {
     textHeader: string
     onButtonSearchClick?: (text: string) => any
     onItemStarChecked?: (stars: number) => any
+    onAllStarsChecked?: () => any
 }
 
-const Filter: React.SFC<Props> = ({iconHeader, textHeader, onButtonSearchClick ,onItemStarChecked}: Props) => {
+const Filter: React.SFC<Props> = ({iconHeader, textHeader, onButtonSearchClick ,onItemStarChecked, onAllStarsChecked}: Props) => {
     let f = null
     if (textHeader == 'Estrellas'){
-        f = <StarsFilter onItemChecked={onItemStarChecked} />
+        f = <StarsFilter onAllStarsChecked={onAllStarsChecked} onItemChecked={onItemStarChecked} />
     }else {
         f = <Searcher onClick={onButtonSearchClick}/>
     }
@@ -32,7 +33,6 @@ const Filter: React.SFC<Props> = ({iconHeader, textHeader, onButtonSearchClick ,
             </span>
             <div className="filter-container">
                 {f}
-
             </div>
         </div>
 
@@ -63,15 +63,16 @@ interface SearcherProps {
 
 interface StarsFilterProps {
     onItemChecked: (stars: number) => any
+    onAllStarsChecked: () => any
 }
 const options: string[] = ['1','2','3','4','5']
- const StarsFilter: React.SFC<StarsFilterProps> = ({onItemChecked}: StarsFilterProps) => {
+ const StarsFilter: React.SFC<StarsFilterProps> = ({onItemChecked, onAllStarsChecked}: StarsFilterProps) => {
     var isChecked: boolean = false
     return (
         <div className="options-filter">
             <div className="option">
                 <label htmlFor="all_STAR" className="input--block">
-                    <input type="checkbox"/>
+                    <input type="checkbox" onChange={onAllStarsChecked}/>
                     <span style={{marginLeft: 8}}>Todas las estrellas</span>
                 </label>
             </div>

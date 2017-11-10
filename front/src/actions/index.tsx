@@ -19,36 +19,39 @@ export interface FilterByStars {
     payload: number
 }
 
-export type VisibilityActions = ShowAll | FilterByName | FilterByStars;
+export type VisibilityActions = ShowAll | FilterByStars | FilterByName;
 
 export function showAll(hotels: Hotel[]): ShowAll{
-    console.log("*** INSIDE showAll Action.  ***", hotels)
     return {
         type: constants.SHOW_ALL,
         payload: hotels
     };
 }
 
-export function filterByName(name: string): FilterByName {
-    return {
-        type: constants.FILTERBY_NAME,
-        payload: name
-    };
-}
-export function filterByStars(stars: number): FilterByStars {
-    return {
-        type: constants.FILTERBY_STARS,
-        payload: stars
+
+// Async redux-thunk
+export function filterByName(name: string, hfetch: HotelDAO) {
+    return async (dispatch: Dispatch<VisibilityActions>): Promise<ShowAll> => {
+        try{
+            const hotels = await hfetch.getByName(name);
+            return dispatch(showAll(hotels));
+        }catch (e){}
     };
 }
 
-// Async redux-thunk
+export function filterByStars(stars: number, hfetch: HotelDAO){
+    return async (dispatch: Dispatch<VisibilityActions>): Promise<ShowAll> => {
+        try{
+            const hotels = await hfetch.getByStars(stars);
+            return dispatch(showAll(hotels));
+        }catch (e){}
+    };
+}
+
 export const fetchHotels = (hfetch: HotelDAO) => {
-    console.log("***** FETCHING HOTELS *****")
     return async (dispatch: Dispatch<VisibilityActions>): Promise<ShowAll> => {
         try{
             const hotels = await hfetch.getAll();
-            console.log("*** FETCHED HOTELS: ", hotels, " ***")
             return dispatch(showAll(hotels));
         }catch (e){}
     };
