@@ -15,7 +15,9 @@ const Hotel: React.SFC<Props> = ({image, name, stars, amenities, price}: Props) 
     return (
         <article className="hotel-ctn row am-ctn recommended">
             <div className="header-hotel col-md-4 col-xs-12">
-                <div className="hotel-image"></div>
+                <div className="hotel-image">
+                    <img  className="hotel-image" src={require(`./hotels/${image}`)} />
+                </div>
             </div>
             <div className="col-md-5 col-xs-12">
                 <div className="hotel-description">
@@ -35,7 +37,6 @@ const Hotel: React.SFC<Props> = ({image, name, stars, amenities, price}: Props) 
                         {
                             amenities.map(getAmenity)
                         }
-                        <span className="meal-description">desayuno</span>
                     </p>
                     <div></div>
                 </div>
@@ -46,10 +47,10 @@ const Hotel: React.SFC<Props> = ({image, name, stars, amenities, price}: Props) 
     )
 }
 
-const getAmenity = (amenity: string) => <span className={`icon-${amenity}`}></span>
+const getAmenity = (amenity: string, key: number) => <span key={key} className={`icon-${amenity}`}></span>
 
 function getStars(n: Number){
     var starsArray = Array(n)
-    return starsArray.map(() => <span className="icon-star star--lg"></span>)
+    return starsArray.map((v, i) => <span key={i} className="icon-star star--lg"></span>)
 }
 export default Hotel

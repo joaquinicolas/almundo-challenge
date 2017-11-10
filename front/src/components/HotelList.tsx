@@ -6,7 +6,6 @@ export interface Props {
     hotels: Hotel[]
 }
 const HotelList: React.SFC<Props> = (props: Props) => {
-    console.log("RECEIVED HOTELS IN HOTELSLIST.tsx: ", props.hotels)
     return (
         <main className="col-md-9">
             {

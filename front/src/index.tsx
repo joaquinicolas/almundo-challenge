@@ -9,8 +9,9 @@ import  {StoreState} from './types/index';
 
 import App from './App';
 import './index.css';
-import {fetchHotels, HotelDAOImpl, showAll, ShowAll} from './actions/index';
+import {fetchHotels, showAll, ShowAll} from './actions/index';
 import {SHOW_ALL} from './constants/index';
+import {HotelDAOImpl} from './api/index';
 
 const store = createStore<StoreState>(visibilityFilter,
     {visibilityFilter: {filter: SHOW_ALL, payload: ''},hotels:[]} ,

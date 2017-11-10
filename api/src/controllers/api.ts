@@ -1,33 +1,24 @@
-"use strict";
+import * as express from 'express';
+import {HotelDAOImpl} from '../Hotel/repository';
+export const router = express.Router();
 
-import * as async from "async";
-import * as request from "request";
-import * as graph from "fbgraph";
-import { Response, Request, NextFunction } from "express";
+const hotelRepo: HotelDAOImpl = new HotelDAOImpl();
+router.get('/', (req, res) => {
+    hotelRepo.getAll()
+        .then(value => res.json(value).sendStatus(200))
+})
 
+router.get('/byName/:name', (req, res) => {
+    if (!req.params.name)
+        return res.sendStatus(404);
+    hotelRepo.filterByName(req.params.name)
+        .then(hotels => res.json(hotels).sendStatus(200));
+})
 
-/**
- * GET /api
- * List of API examples.
- */
-export let getApi = (req: Request, res: Response) => {
-  res.render("api/index", {
-    title: "API Examples"
-  });
-};
+router.get('/bystars/:stars', (req, res) => {
+    if (!req.params.stars)
+        return res.sendStatus(404);
 
-/**
- * GET /api/facebook
- * Facebook API example.
- */
-export let getFacebook = (req: Request, res: Response, next: NextFunction) => {
-  const token = req.user.tokens.find((token: any) => token.kind === "facebook");
-  graph.setAccessToken(token.accessToken);
-  graph.get(`${req.user.facebook}?fields=id,name,email,first_name,last_name,gender,link,locale,timezone`, (err: Error, results: graph.FacebookUser) => {
-    if (err) { return next(err); }
-    res.render("api/facebook", {
-      title: "Facebook API",
-      profile: results
-    });
-  });
-};
+    hotelRepo.filterByStars(req.params.stars)
+        .then(h => res.json(h).sendStatus(200));
+})

@@ -68,11 +68,12 @@ interface StarsFilterProps {
 const options: string[] = ['1','2','3','4','5']
  const StarsFilter: React.SFC<StarsFilterProps> = ({onItemChecked, onAllStarsChecked}: StarsFilterProps) => {
     var isChecked: boolean = false
+
     return (
         <div className="options-filter">
             <div className="option">
                 <label htmlFor="all_STAR" className="input--block">
-                    <input type="checkbox" onChange={onAllStarsChecked}/>
+                    <input type="checkbox"  onChange={onAllStarsChecked}/>
                     <span style={{marginLeft: 8}}>Todas las estrellas</span>
                 </label>
             </div>
