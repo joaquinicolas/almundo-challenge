@@ -10,6 +10,7 @@ cd almundo-challenge/api
 ```
 cd api
 yarn install
+npm install -g nodemon
 ```
 - Build and run the server api
 ```

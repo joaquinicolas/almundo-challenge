@@ -9,8 +9,8 @@
   "author": "Joaquin Noe",
   "license": "MIT",
   "scripts": {
-    "start": "npm run build && yarn serve",
-    "build": "npm run build-ts",
+    "start": "yarn build && yarn serve",
+    "build": "yarn build-ts",
     "serve": "nodemon dist/server.js localhost 8080",
     "test": "jest --forceExit",
     "build-ts": "tsc",
