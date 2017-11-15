@@ -5,16 +5,16 @@ import {Action, ActionCreator, Dispatch} from 'redux';
 import {HotelDAO} from '../api/index';
 
 export interface ShowAll {
-    type: constants.SHOW_ALL
+    type: constants.SHOW_ALLT,
     payload: Hotel[]
 }
 
 export interface FilterByName {
-    type: constants.FILTERBY_NAME
+    type: constants.FILTERBY_NAMET
     payload: string
 }
 export interface FilterByStars {
-    type: constants.FILTERBY_STARS
+    type: constants.FILTERBY_STARST
     payload: number
 }
 
@@ -38,13 +38,11 @@ export function filterByName(name: string, hfetch: HotelDAO) {
     };
 }
 
-export function filterByStars(stars: number, hfetch: HotelDAO){
-    return async (dispatch: Dispatch<VisibilityActions>): Promise<ShowAll> => {
-        try{
-            const hotels = await hfetch.getByStars(stars);
-            return dispatch(showAll(hotels));
-        }catch (e){}
-    };
+export const filterByStars = (stars: number, hfetch: HotelDAO) => {
+    return (dispatch: Dispatch<ShowAll>): ShowAll => {
+        hfetch.getAll()
+            .then(value => dispatch(showAll(value)))
+    }
 }
 
 export const fetchHotels = (hfetch: HotelDAO) => {
@@ -54,4 +52,4 @@ export const fetchHotels = (hfetch: HotelDAO) => {
             return dispatch(showAll(hotels));
         }catch (e){}
     };
-}
+};
